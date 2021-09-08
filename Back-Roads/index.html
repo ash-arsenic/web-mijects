@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <title>Back Road</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
+      <div class="container">
+        <a class="navbar-brand company" href="#"
+          >Back<span class="text-color-aqua">Roads</span></a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#nav-menu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="nav-menu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item fw-bolder">
+              <a class="nav-link text-dark top-link" href="#home">Home</a>
+            </li>
+            <li class="nav-item fw-bolder">
+              <a class="nav-link text-dark top-link" href="#about">About</a>
+            </li>
+            <li class="nav-item fw-bolder">
+              <a class="nav-link text-dark top-link" href="#services"
+                >Services</a
+              >
+            </li>
+            <li class="nav-item fw-bolder">
+              <a class="nav-link text-dark top-link" href="#featured"
+                >Featured</a
+              >
+            </li>
+            <li class="nav-item fw-bolder">
+              <a class="nav-link text-dark top-link" href="#gallery">Gallery</a>
+            </li>
+          </ul>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="bi bi-facebook h5 text-color-aqua"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="bi bi-twitter h5 text-color-aqua"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="bi bi-instagram h5 text-color-aqua"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Intro Banner -->
+
+    <section class="banner" id="home">
+      <div
+        class="
+          container
+          text-white text-center
+          d-flex
+          flex-column
+          align-item-center
+          justify-content-center
+        "
+      >
+        <h1 class="banner-heading mx-auto">CONTINUE EXPLORING</h1>
+        <p class="mx-auto my-5">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, quis.
+          Cum rerum exercitationem molestiae!
+        </p>
+        <button class="btn btn-outline-light p-3 mx-auto">EXPLORE TOURS</button>
+      </div>
+    </section>
+
+    <!-- About US -->
+
+    <section class="p-5" id="about">
+      <div class="container-fluid">
+        <h1 class="text-center my-5 main-heading">
+          About <span class="text-color-aqua">Us</span>
+        </h1>
+        <div class="card d-flex" style="border: none">
+          <div class="row row-cols-1 row-cols-lg-2 g-4">
+            <div class="col p-3">
+              <img
+                src="./images/about.jpeg"
+                alt=""
+                class="img-fluid about-image"
+              />
+            </div>
+            <div class="col d-flex flex-column justify-content-center">
+              <h1 class="my-3 fw-bolder">EXPLORE THE DIFFERENCE</h1>
+              <p class="my-3 fw-light">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Accusamus consectetur velit maiores est esse libero tempore
+                iste?
+              </p>
+              <p class="my-3 fw-light">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Temporibus voluptatum amet! Corrupti enim nobis porro ipsa
+                ratione.
+              </p>
+
+              <button
+                class="btn btn-primary py-3 my-3"
+                style="font-size: 1.1rem; width: 200px; letter-spacing: 3px"
+              >
+                READ MORE
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="p-5 bg-light" id="services">
+      <div class="container">
+        <h1 class="text-center main-heading m-5">
+          OUR <span class="text-color-aqua">SERVICES</span>
+        </h1>
+        <div class="row row-cols-1 row-cols-lg-3 row-cols-md-2">
+          <div class="col my-5">
+            <div class="row">
+              <div
+                class="col-2 text-center h1"
+                style="background-color: #3fd0d4; height: 60px"
+              >
+                <i class="bi bi-wallet"></i>
+              </div>
+              <div class="col ms-2">
+                <h4 class="service-text">SAVING MONEY</h4>
+                <p style="font-size: 0.95rem" class="fw-light">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Libero, suscipit?
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col my-5">
+            <div class="row">
+              <div
+                class="col-2 text-center h1"
+                style="background-color: #3fd0d4; height: 60px"
+              >
+                <i class="bi bi-tree-fill img-fluid"></i>
+              </div>
+              <div class="col ms-2">
+                <h4 class="service-text">ENDLESS HIKING</h4>
+                <p style="font-size: 0.95rem" class="fw-light">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Libero, suscipit?
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col my-5">
+            <div class="row">
+              <div
+                class="col-2 text-center"
+                style="background-color: #3fd0d4; height: 60px"
+              >
+                <i class="bi bi-truck-flatbed h1"></i>
+              </div>
+              <div class="col ms-2">
+                <h4 class="service-text">AMAZING COMFORT</h4>
+                <p style="font-size: 0.95rem" class="fw-light">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Libero, suscipit?
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured -->
+    <section class="p-5" id="featured">
+      <div class="container">
+        <h1 class="text-center m-5 main-heading">
+          FEATURED <span class="text-primary">TOURS</span>
+        </h1>
+        <div class="row row-cols-1 row-cols-lg-3 row-cols-md-2 g-4">
+          <div class="col">
+            <div class="card shadow">
+              <img src="./images/tour-1.jpeg" alt="..." class="card-img-top" />
+              <div class="card-body">
+                <h5 class="card-title fw-bolder">Tibet Adventure</h5>
+                <div class="card-text mt-3 d-flex justify-content-between">
+                  <p class="text-color-aqua">
+                    <i class="bi bi-map-fill pe-2"></i>China
+                  </p>
+                  <p class="text-secondary fw-light">
+                    6 Days
+                    <br />
+                    From $2100
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card shadow">
+              <img src="./images/tour-2.jpeg" alt="..." class="card-img-top" />
+              <div class="card-body">
+                <h5 class="card-title fw-bolder">Best of JAVA</h5>
+                <div class="card-text mt-3 d-flex justify-content-between">
+                  <p class="text-color-aqua">
+                    <i class="bi bi-map-fill pe-2"></i>Indonesia
+                  </p>
+                  <p class="text-secondary fw-light">
+                    10 Days
+                    <br />
+                    From $4100
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card shadow">
+              <img src="./images/tour-3.jpeg" alt="..." class="card-img-top" />
+              <div class="card-body">
+                <h5 class="card-title fw-bolder">Explore Hong Kong</h5>
+                <div class="card-text mt-3 d-flex justify-content-between">
+                  <p class="text-color-aqua">
+                    <i class="bi bi-map-fill pe-2"></i>Hong Kong
+                  </p>
+                  <p class="text-secondary fw-light">
+                    12 Days
+                    <br />
+                    From $3100
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card shadow">
+              <img src="./images/tour-4.jpeg" alt="..." class="card-img-top" />
+              <div class="card-body">
+                <h5 class="card-title fw-bolder">Kenya Highlights</h5>
+                <div class="card-text mt-3 d-flex justify-content-between">
+                  <p class="text-color-aqua">
+                    <i class="bi bi-map-fill pe-2"></i>Kenya
+                  </p>
+                  <p class="text-secondary fw-light">
+                    22 Days
+                    <br />
+                    From $5400
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center">
+          <button
+            class="btn btn-primary py-3 mt-5"
+            style="font-size: 1.1rem; width: 200px; letter-spacing: 3px"
+          >
+            ALL TOURS
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="py-5" id="gallery" style="background-color: #ececec">
+      <div class="container-fluid">
+        <h1 class="text-center main-heading m-5">
+          OUR <span class="text-color-aqua">GALLERY</span>
+        </h1>
+
+        <div class="row g-4 row-cols-1 row-cols-lg-4 row-cols-md-2">
+          <div class="col">
+            <img
+              class="gallery-img img-fluid"
+              src="./images/tour-1.jpeg"
+              alt=""
+            />
+          </div>
+          <div class="col">
+            <img
+              class="gallery-img img-fluid"
+              src="./images/tour-2.jpeg"
+              alt=""
+            />
+          </div>
+          <div class="col">
+            <img
+              class="gallery-img img-fluid"
+              src="./images/tour-3.jpeg"
+              alt=""
+            />
+          </div>
+          <div class="col">
+            <img
+              class="gallery-img img-fluid"
+              src="./images/tour-4.jpeg"
+              alt=""
+            />
+          </div>
+          <div class="col">
+            <img
+              class="gallery-img img-fluid"
+              src="./images/tour-5.jpeg"
+              alt=""
+            />
+          </div>
+          <div class="col">
+            <img
+              class="gallery-img img-fluid"
+              src="./images/tour-6.jpeg"
+              alt=""
+            />
+          </div>
+          <div class="col">
+            <img
+              class="gallery-img img-fluid"
+              src="./images/tour-7.jpg"
+              alt=""
+            />
+          </div>
+          <div class="col">
+            <img
+              class="gallery-img img-fluid"
+              src="./images/tour-1.jpeg"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT US -->
+    <section class="py-5">
+      <div class="container-fluid text-center">
+        <h1 class="text-center main-heading m-5">
+          HOT <span class="text-color-aqua">DEALS</span>
+        </h1>
+        <div class="input-group mx-auto mb-3 input-email">
+          <input type="text" class="form-control" placeholder="YOUR EMAIL" />
+          <button
+            class="btn btn-outline-primary"
+            style="letter-spacing: 2px"
+            type="button"
+          >
+            SUBMIT
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="p-5 bg-dark text-light">
+      <div class="container text-center">
+        <div>
+          <a
+            href="#home"
+            class="link-light m-2"
+            style="text-decoration: none; letter-spacing: 2px"
+            >HOME</a
+          >
+          <a
+            href="#about"
+            class="link-light m-2"
+            style="text-decoration: none; letter-spacing: 2px"
+            >ABOUT</a
+          >
+          <a
+            href="#services"
+            class="link-light m-2"
+            style="text-decoration: none; letter-spacing: 2px"
+            >SERVICE</a
+          >
+          <a
+            href="#featured"
+            class="link-light m-2"
+            style="text-decoration: none; letter-spacing: 2px"
+            >FEATURED</a
+          >
+          <a
+            href="#gallery"
+            class="link-light m-2"
+            style="text-decoration: none; letter-spacing: 2px"
+            >GALLERY</a
+          >
+        </div>
+        <div class="my-3">
+          <a href="#" class="link-light"
+            ><i class="bi bi-facebook h2 mx-2"></i
+          ></a>
+          <a href="#" class="link-light"
+            ><i class="bi bi-twitter h2 mx-2"></i
+          ></a>
+          <a href="#" class="link-light"
+            ><i class="bi bi-instagram h2 mx-2"></i
+          ></a>
+        </div>
+        <div class="mt-3 mb-5">
+          <p class="fw-light" style="letter-spacing: 5px">
+            Copyright &copy; Backroads Travel Tours Company 2021. All Rights
+            Reserved
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

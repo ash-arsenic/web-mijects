@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Counter</title>
+  </head>
+  <body>
+    <section>
+      <div
+        class="
+          container
+          d-flex
+          flex-column
+          align-items-center
+          justify-content-center
+        "
+        style="height: 100vh; width: 100vw"
+      >
+        <div class="row mb-3">
+          <div class="col">
+            <h1 class="text-center data">Counter</h1>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col">
+            <h1 id="show" class="text-center data">0</h1>
+          </div>
+        </div>
+        <div class="row m-3">
+          <div class="col">
+            <button
+              type="button"
+              id="decrease"
+              class="btn fs-3 btn-outline-dark"
+            >
+              Decrease
+            </button>
+          </div>
+
+          <div class="col">
+            <button type="button" id="reset" class="btn fs-3 btn-outline-dark">
+              Reset
+            </button>
+          </div>
+
+          <div class="col">
+            <button
+              type="button"
+              id="increase"
+              class="btn fs-3 btn-outline-dark"
+            >
+              Increase
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+
+    <!-- Bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

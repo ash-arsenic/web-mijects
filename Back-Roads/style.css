@@ -1,0 +1,65 @@
+body {
+  font-family: "Nunito", sans-serif;
+}
+
+.banner {
+  margin-top: 60px;
+  height: 91vh;
+  background-image: linear-gradient(rgba(63, 208, 212, 0.7), rgba(0, 0, 0, 0.7)),
+    url("./images/main.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.banner div {
+  height: 100%;
+}
+
+.banner p {
+  max-width: 700px;
+  font-size: 1rem;
+  letter-spacing: 3px;
+}
+
+.banner button {
+  width: 220px;
+  font-size: 1.1rem;
+  letter-spacing: 3px;
+}
+
+.banner-heading {
+  font-size: 4.5rem;
+  font-weight: bolder;
+}
+
+.company {
+  font-size: 1.5rem;
+  letter-spacing: 4px;
+  font-weight: bolder;
+}
+
+.top-link {
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+}
+
+.text-color-aqua {
+  color: #3fd0d4;
+}
+
+.main-heading {
+  font-size: 2.75rem;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+.service-text {
+  font-weight: bolder;
+  letter-spacing: 2px;
+}
+
+.input-email {
+  width: 90vw;
+  max-width: 600px;
+}
