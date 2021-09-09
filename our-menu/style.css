@@ -1,0 +1,32 @@
+:root {
+  --goldie: #c59d5f;
+}
+
+.food-info {
+  border-bottom: 1px dotted black;
+}
+
+.main-heading {
+  font-family: cursive;
+  font-size: 3rem;
+  font-weight: bolder;
+}
+
+.food-image {
+  border: 5px solid var(--goldie);
+  border-radius: 5px;
+}
+
+.underline {
+  height: 5px;
+  width: 75px;
+  background-color: var(--goldie);
+}
+
+#price {
+  color: var(--goldie);
+}
+
+#name {
+  text-transform: capitalize;
+}

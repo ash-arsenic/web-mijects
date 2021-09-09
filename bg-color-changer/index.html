@@ -25,10 +25,10 @@
         <div>
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a href="#" class="nav-link text-black">Simple</a>
+              <a href="#" class="nav-link text-black" id="simple">Simple</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link text-black">Hex</a>
+              <a href="#" class="nav-link text-black" id="hex">Hex</a>
             </li>
           </ul>
         </div>
@@ -37,7 +37,7 @@
 
     <!-- Showcase -->
 
-    <section>
+    <section id="back">
       <div class="container">
         <div
           class="d-flex flex-column align-items-center justify-content-center"
@@ -45,16 +45,22 @@
         >
           <div>
             <h1 class="text-light rounded bg-dark text-center p-2">
-              Background Color: <span class="text-primary">#F8F4C2</span>
+              Background Color:
+              <span class="text-primary" id="background">#F8F4C2</span>
             </h1>
           </div>
-          <button type="button" class="btn btn-outline-dark m-3 btn-lg">
+          <button
+            id="change-btn"
+            type="button"
+            class="btn btn-outline-dark m-3 btn-lg"
+          >
             Click Me
           </button>
         </div>
       </div>
     </section>
 
+    <script src="app.js"></script>
     <!-- Bootstrap -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"

@@ -42,36 +42,41 @@
           <img
             src="https://randomuser.me/api/portraits/women/54.jpg"
             alt=""
+            id="person-img"
             class="card-img-top rounded-circle"
             style="height: 150px; width: 150px"
           />
           <div class="card-body">
-            <h4 class="card-title space">Sara Jones</h4>
+            <h4 class="card-title space" id="name">Sara Jones</h4>
             <h6
               class="card-subtitle text-primary space"
+              id="job"
               style="font-size: 12px"
             >
               UX Designer
             </h6>
-            <p class="card-text">
+            <p class="card-text" id="description">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
               commodi dolorum voluptate natus sint amet voluptatem assumenda
               rem, officia?
             </p>
             <div class="p-1">
-              <a href="#"
+              <a href="#" id="left"
                 ><i class="bi bi-chevron-left space text-primary"></i
               ></a>
-              <a href="#"
+              <a href="#" id="right"
                 ><i class="bi bi-chevron-right space text-primary"></i
               ></a>
             </div>
-            <a href="#" class="btn mt-3 btn-outline-primary">Surprise Me</a>
+            <a href="#" id="surprise" class="btn mt-3 btn-outline-primary"
+              >Surprise Me</a
+            >
           </div>
         </div>
       </div>
     </section>
 
+    <script src="app.js"></script>
     <!-- Bootstrap -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
