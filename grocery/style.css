@@ -1,0 +1,92 @@
+section {
+  background-color: #f1f5f8;
+}
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grocery {
+  width: 90vw;
+  max-width: 600px;
+}
+
+h3 {
+  color: #083453;
+  letter-spacing: 4px;
+  font-weight: bolder;
+}
+
+.submit-btn {
+  background-color: #a5d5f8;
+  border: none;
+  border-radius: 0px 10px 10px 0px;
+  letter-spacing: 2px;
+  font-size: small;
+  padding: 0px 10px;
+}
+
+.submit-btn:hover {
+  background-color: #66b8f3;
+  color: white;
+}
+
+#input-grocery {
+  background-color: #f1f5f8;
+  border: none;
+  border-radius: 10px 0px 0px 10px;
+}
+
+.items {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 15px;
+  border-radius: 10px;
+}
+
+.items:hover {
+  background-color: #f1f5f8;
+  color: grey;
+}
+
+#edit {
+  font-size: 14px;
+  color: #6be675;
+}
+
+#delete {
+  font-size: 14px;
+  color: #e66b6b;
+}
+
+.clear-btn {
+  background-color: white;
+  border: none;
+  color: #e66b6b;
+  letter-spacing: 4px;
+  font-size: small;
+  visibility: hidden;
+}
+
+.clear-btn:hover {
+  color: #e74a4a;
+}
+
+.toasts {
+  border-radius: 5px;
+  letter-spacing: 5px;
+  font-size: smaller;
+}
+
+.toast-danger {
+  background-color: #eb9e9e;
+  color: #af4f4f;
+}
+
+.toast-success {
+  background-color: #aee4b2;
+  color: #28d636;
+}
