@@ -5,7 +5,7 @@ const data = [
     price: 9.9,
     image: "./images/product-1.jpeg",
     company: "Ikea",
-    count: 0,
+    count: 1,
   },
 
   {
@@ -14,7 +14,7 @@ const data = [
     price: 39.95,
     image: "./images/product-2.jpeg",
     company: "Liddy",
-    count: 0,
+    count: 1,
   },
 
   {
@@ -23,7 +23,7 @@ const data = [
     price: 29.98,
     image: "./images/product-3.jpeg",
     company: "Liddy",
-    count: 0,
+    count: 1,
   },
 
   {
@@ -32,7 +32,7 @@ const data = [
     price: 79.99,
     image: "./images/product-4.jpeg",
     company: "Ikea",
-    count: 0,
+    count: 1,
   },
 
   {
@@ -41,7 +41,7 @@ const data = [
     price: 25.99,
     image: "./images/product-5.jpeg",
     company: "Ikea",
-    count: 0,
+    count: 1,
   },
 
   {
@@ -50,7 +50,7 @@ const data = [
     price: 45.99,
     image: "./images/product-6.jpeg",
     company: "Liddy",
-    count: 0,
+    count: 1,
   },
 
   {
@@ -59,7 +59,7 @@ const data = [
     price: 6.99,
     image: "./images/product-7.jpeg",
     company: "Marcos",
-    count: 0,
+    count: 1,
   },
 
   {
@@ -68,7 +68,7 @@ const data = [
     price: 69.99,
     image: "./images/product-8.jpeg",
     company: "Caressa",
-    count: 0,
+    count: 1,
   },
 
   {
@@ -77,7 +77,7 @@ const data = [
     price: 8.99,
     image: "./images/product-4.jpeg",
     company: "Ikea",
-    count: 0,
+    count: 1,
   },
 
   {
@@ -86,7 +86,7 @@ const data = [
     price: 9.9,
     image: "./images/product-1.jpeg",
     company: "Marcos",
-    count: 0,
+    count: 1,
   },
 
   {
@@ -95,7 +95,7 @@ const data = [
     price: 39.95,
     image: "./images/product-2.jpeg",
     company: "Caressa",
-    count: 0,
+    count: 1,
   },
 
   {
@@ -104,111 +104,40 @@ const data = [
     price: 29.98,
     image: "./images/product-3.jpeg",
     company: "Marcos",
-    count: 0,
+    count: 1,
   },
 ];
 
-// REFENCES
-const searchItem = document.querySelectorAll(".search-item");
-const addToCart = document.querySelectorAll(".add-to-cart");
-
 const cartCount = document.querySelector(".cart-size");
 const cartItems = document.querySelector(".cart-items");
+const reloadCart = document.querySelector(".cart-div");
+const checkoutPrice = document.querySelector(".total-checkout-price");
+const goToCart = document.querySelector(".go-to-cart");
+
 // Variables
-let selectedItem = 0;
+let cartProducts = localStorage.getItem("cart")
+  ? JSON.parse(localStorage.getItem("cart"))
+  : [];
+let selectedItem = cartProducts.length === undefined ? 0 : cartProducts.length;
 // In the beginning
+// addListener();
 window.addEventListener("DOMContentLoaded", function () {
-  for (let i = 0; i < data.length; i++) {
-    const element = makeElement(data[i]);
-    productsList.appendChild(element);
-  }
-  sliderValue.innerText = slider.value;
   cartCount.innerText = selectedItem;
+  updatePrice();
 });
 
-// Event Handlers
-searchItem.forEach(function (item) {
-  item.addEventListener("click", function () {
-    console.log("Search Item");
-    id = "4";
-    window.location.href = "single-product.html?id=" + id;
-  });
-});
-
-addToCart.forEach(function (item) {
-  item.addEventListener("click", function () {
-    // cartItems.appendChild(makeCartItems(data[0]));
-    console.log("Adding");
-    selectedItem++;
-    cartCount.innerText = selectedItem;
-  });
-});
-
-// Products
-sidebarLinks.forEach(function (item) {
-  item.addEventListener("click", function (e) {
-    const ele = e.currentTarget.classList;
-    removeElements();
-    if (ele.contains("all")) {
-      for (let i = 0; i < data.length; i++) {
-        const element = makeElement(data[i]);
-        productsList.appendChild(element);
-      }
-    } else if (ele.contains("ikea")) {
-      for (let i = 0; i < data.length; i++) {
-        if (data[i].company === "Ikea") {
-          const element = makeElement(data[i]);
-          productsList.appendChild(element);
-        }
-      }
-    } else if (ele.contains("marcos")) {
-      for (let i = 0; i < data.length; i++) {
-        if (data[i].company === "Marcos") {
-          const element = makeElement(data[i]);
-          productsList.appendChild(element);
-        }
-      }
-    } else if (ele.contains("caressa")) {
-      for (let i = 0; i < data.length; i++) {
-        if (data[i].company === "Caressa") {
-          const element = makeElement(data[i]);
-          productsList.appendChild(element);
-        }
-      }
-    } else if (ele.contains("liddy")) {
-      for (let i = 0; i < data.length; i++) {
-        if (data[i].company === "Liddy") {
-          const element = makeElement(data[i]);
-          productsList.appendChild(element);
-        }
-      }
-    }
-  });
-});
-
-slider.oninput = function () {
-  const currentValue = this.value;
-  sliderValue.innerText = currentValue;
-  removeElements();
-  for (let i = 0; i < data.length; i++) {
-    if (data[i].price <= currentValue) {
-      productsList.appendChild(makeElement(data[i]));
-    }
+reloadCart.addEventListener("click", function () {
+  removeCartElements();
+  for (let i = 0; i < cartProducts.length; i++) {
+    cartItems.appendChild(makeCartItems(cartProducts[i]));
   }
-};
-
-searchProduct.oninput = function () {
-  const currentValue = this.value;
-  removeElements();
-  for (let i = 0; i < data.length; i++) {
-    const str = data[i].name.toLowerCase();
-    const comp = currentValue.toLowerCase();
-    if (str.includes(comp)) {
-      productsList.appendChild(makeElement(data[i]));
-    }
+});
+goToCart.addEventListener("click", function () {
+  removeCartElements();
+  for (let i = 0; i < cartProducts.length; i++) {
+    cartItems.appendChild(makeCartItems(cartProducts[i]));
   }
-};
-
+});
 // Functions
 function makeElement(productDetails) {
   const element = document.createElement("section");
@@ -231,7 +160,7 @@ function makeElement(productDetails) {
                       </button>
                     </div>
 
-                    <div class="circle-icon mx-3 add-to-cart">
+                    <div class="circle-icon mx-3 add-to-cart" data-bs-toggle="modal" data-bs-target="#exampleModal">
                       <button class="buton" style="color: white">
                         <i class="bi bi-cart-fill h5"></i>
                       </button>
@@ -245,6 +174,17 @@ function makeElement(productDetails) {
                 </div>
               </div>
   `;
+
+  const searchItem = element.querySelector(".search-item");
+  const addToCart = element.querySelector(".add-to-cart");
+
+  searchItem.addEventListener("click", function () {
+    window.location.href = "single-product.html?id=" + productDetails.id;
+  });
+
+  addToCart.addEventListener("click", function () {
+    pushInCart(productDetails.id);
+  });
   return element;
 }
 
@@ -254,9 +194,18 @@ function removeElements() {
   }
 }
 
+function removeCartElements() {
+  while (cartItems.firstChild) {
+    cartItems.removeChild(cartItems.lastChild);
+  }
+}
+
 function makeCartItems(product) {
   const element = document.createElement("section");
   element.classList.add("cart-product");
+  const attr = document.createAttribute("data-id");
+  attr.value = product.id;
+  element.setAttributeNode(attr);
   element.innerHTML = `
   <div class="row my-4">
   <div class="col-3 d-flex align-items-center">
@@ -275,16 +224,148 @@ function makeCartItems(product) {
       <button class="cart-item-remove">remove</button>
     </p>
   </div>
-  <div class="col-2">
-    <button class="buton">
+  <div class="col-2 text-center">
+    <button class="buton increase">
       <i class="bi icon-up bi-chevron-up"></i>
     </button>
     <div class="cart-item-count">${product.count}</div>
-    <button class="buton">
+    <button class="buton decrease">
       <i class="bi icon-up bi-chevron-down"></i>
     </button>
   </div>
 </div>
 
   `;
+  const incBtn = element.querySelector(".increase");
+  const decBtn = element.querySelector(".decrease");
+  const currentItemCount = element.querySelector(".cart-item-count");
+  const removeBtn = element.querySelector(".cart-item-remove");
+
+  incBtn.addEventListener("click", function () {
+    incrementItem(product.id);
+    currentItemCount.innerText = parseInt(currentItemCount.innerText) + 1;
+    updatePrice();
+  });
+  decBtn.addEventListener("click", function () {
+    if (parseInt(currentItemCount.innerText) > 1) {
+      currentItemCount.innerText = parseInt(currentItemCount.innerText) - 1;
+      decreaseItem(product.id);
+      updatePrice();
+    }
+  });
+  removeBtn.addEventListener("click", function (e) {
+    removeFromLocalStorage(product.id);
+    cartItems.removeChild(element);
+    selectedItem--;
+    cartCount.innerText = selectedItem;
+    updatePrice();
+  });
+  return element;
+}
+
+function addListener() {
+  searchItem = document.querySelectorAll(".search-item");
+  addToCart = document.querySelectorAll(".add-to-cart");
+
+  searchItem.forEach(function (item) {
+    item.addEventListener("click", function (e) {
+      const element =
+        e.currentTarget.parentElement.parentElement.parentElement.parentElement;
+
+      window.location.href = "single-product.html?id=" + element.dataset.id;
+    });
+  });
+
+  addToCart.forEach(function (item) {
+    item.addEventListener("click", pushInCart);
+  });
+}
+
+function pushInCart(id) {
+  // const element =
+  //   e.currentTarget.parentElement.parentElement.parentElement.parentElement;
+
+  let product = null;
+
+  for (let i = 0; i < data.length; i++) {
+    if (parseInt(id) === data[i].id) {
+      product = data[i];
+      break;
+    }
+  }
+  if (!alreadyExist(product.id)) {
+    cartItems.appendChild(makeCartItems(product));
+    // addCartListener();
+    addToLocalStorage(product.id);
+    selectedItem++;
+    cartCount.innerText = selectedItem;
+  } else {
+    incrementItem(product.id);
+  }
+  updatePrice();
+}
+
+function addToLocalStorage(id) {
+  let product = null;
+  for (let i = 0; i < data.length; i++) {
+    if (parseInt(id) === data[i].id) {
+      product = data[i];
+      break;
+    }
+  }
+  cartProducts.push(product);
+  localStorage.setItem("cart", JSON.stringify(cartProducts));
+}
+
+function alreadyExist(id) {
+  for (let i = 0; i < cartProducts.length; i++) {
+    if (cartProducts[i].id === parseInt(id)) {
+      return true;
+    }
+  }
+  return false;
+}
+
+function incrementItem(id) {
+  for (let i = 0; i < cartProducts.length; i++) {
+    if (cartProducts[i].id === parseInt(id)) {
+      cartProducts[i].count++;
+      break;
+    }
+  }
+
+  localStorage.setItem("cart", JSON.stringify(cartProducts));
+}
+
+function decreaseItem(id) {
+  for (let i = 0; i < cartProducts.length; i++) {
+    if (cartProducts[i].id === parseInt(id)) {
+      cartProducts[i].count--;
+      break;
+    }
+  }
+  localStorage.setItem("cart", JSON.stringify(cartProducts));
+}
+
+function removeFromLocalStorage(id) {
+  let item = -1;
+  for (let i = 0; i < cartProducts.length; i++) {
+    if (cartProducts[i].id === parseInt(id)) {
+      item = i;
+      break;
+    }
+  }
+  if (item != -1) {
+    cartProducts.splice(item, 1);
+  }
+  localStorage.setItem("cart", JSON.stringify(cartProducts));
+}
+
+function updatePrice() {
+  let price = 0.0;
+  for (let i = 0; i < cartProducts.length; i++) {
+    price +=
+      parseFloat(cartProducts[i].count) * parseFloat(cartProducts[i].price);
+  }
+  checkoutPrice.innerText = price.toFixed(2);
 }

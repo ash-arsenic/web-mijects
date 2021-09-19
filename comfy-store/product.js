@@ -1,7 +1,6 @@
 const singleProduct = document.querySelector(".single-product");
 
 const item = location.search.substring(1).split("=");
-console.log(item);
 
 const id = item[1];
 let currentProduct = null;
@@ -31,8 +30,22 @@ singleProduct.innerHTML = `
     quod exercitationem facilis minus quibusdam fugit nostrum
     doloribus aliquam repellendus ducimus?
   </p>
-  <button class="btn-coffee add-to-cart" style="font-size: 1rem">
+  <button class="btn-coffee add-to-cart-btn" style="font-size: 1rem" data-bs-toggle="modal" data-bs-target="#exampleModal">
     ADD TO CART
   </button>
 </div>
 `;
+
+addToCartButton = document.querySelector(".add-to-cart-btn");
+
+addToCartButton.addEventListener("click", function () {
+  if (!alreadyExist(currentProduct.id)) {
+    cartItems.appendChild(makeCartItems(currentProduct));
+    addToLocalStorage(currentProduct.id);
+    selectedItem++;
+    cartCount.innerText = selectedItem;
+  } else {
+    incrementItem(currentProduct.id);
+  }
+  updatePrice();
+});
